@@ -1,0 +1,811 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>KAMU EKONOMİSİ</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1cf54a69-1696-80e0-a200-edd11600aa74" class="page sans"><header><h1 class="page-title">KAMU EKONOMİSİ</h1><p class="page-description"></p></header><div class="page-body"><p id="1d154a69-1696-800e-91bc-ed94e766a673" class="">
+</p><p id="1d154a69-1696-804d-8390-ec18c1a2cf21" class="">
+</p><hr id="1d154a69-1696-8048-b4e9-ce19add33b69"/><h1 id="1d154a69-1696-8090-a1b1-dbbdcecf2551" class=""><strong>1. Devlet Hangi Faaliyetleri Üstlenmelidir?</strong></h1><p id="1d154a69-1696-806d-ae64-cbeda9cc5d52" class="">Devletin ekonomideki rolü, farklı iktisadi yaklaşımlara göre farklılık gösterir. Bu yaklaşımlar üç ana başlık altında incelenebilir:</p><p id="1d154a69-1696-804c-9b37-ccb0056e8f2c" class="">
+</p><h2 id="1d154a69-1696-807d-a44d-ec7dfedc0109" class=""><strong>🔹 Liberal Yaklaşım</strong></h2><p id="1d154a69-1696-8030-b8d5-f9bd68b312a0" class="">•	Temel görüş: <em>“Bırakınız yapsınlar, bırakınız geçsinler.”</em></p><p id="1d154a69-1696-80dd-9e17-fca007b0afa2" class="">•	Devletin ekonomik rolü <strong>minimum</strong> düzeyde olmalıdır.</p><p id="1d154a69-1696-8039-825b-d402a76e9c0d" class="">•	Devletin asli görevleri: <strong>Hukukun üstünlüğünü sağlamak, mülkiyet haklarını korumak, güvenlik ve adalet hizmetlerini sunmak</strong>.</p><p id="1d154a69-1696-801e-b083-e2b481291da7" class="">•	Piyasa mekanizması etkin çalışıyorsa, kamu müdahalesine gerek yoktur.</p><p id="1d154a69-1696-8021-af82-e4e02158299b" class="">•	Adam Smith, Friedrich Hayek ve Milton Friedman gibi düşünürler bu yaklaşımı savunur.</p><p id="1d154a69-1696-8069-b0ed-f2150f10d595" class="">•	Kamu harcamalarının düşük tutulması ve özel sektör önceliklidir.</p><p id="1d154a69-1696-80f0-acf4-e0c0127fd50d" class="">
+</p><h2 id="1d154a69-1696-80a1-9dc0-c88f74c83b4c" class=""><strong>🔹 Radikal Yaklaşım</strong></h2><p id="1d154a69-1696-80a8-8845-cf6678ec8956" class="">•	Kapitalist sistemin adaletsizlik ürettiğini savunur.</p><p id="1d154a69-1696-8091-b55d-f0f1141fef2f" class="">•	Devlet, gelir ve servet eşitsizliklerini <strong>ortadan kaldırmak</strong> için aktif rol almalıdır.</p><p id="1d154a69-1696-80b4-b69e-e8e4c4580e6f" class="">•	Özel mülkiyetin sınırlandırılması veya kaldırılması, üretim araçlarının kamulaştırılması savunulur.</p><p id="1d154a69-1696-806e-b0e5-dfae2dbadcc0" class="">•	Marxist düşünce bu yaklaşımın temelidir.</p><p id="1d154a69-1696-80e2-a7f7-c630d6a9a879" class="">•	Devlet, ekonominin <strong>tamamını</strong> ya da büyük kısmını kontrol etmelidir.</p><p id="1d154a69-1696-80bb-9416-c68f99756369" class="">
+</p><h2 id="1d154a69-1696-80ad-bc3b-cc6683a37149" class=""><strong>🔹 Sosyal Demokrat Yaklaşım</strong></h2><p id="1d154a69-1696-803b-8816-d695d5fac071" class="">•	Karma ekonomi modelini benimser.</p><p id="1d154a69-1696-801f-a8d6-cda0d188c35b" class="">•	Piyasa mekanizması esas olmakla birlikte, devlet <strong>gelir dağılımı adaleti, sosyal güvenlik ve dışsallıklar</strong> gibi alanlarda müdahalede bulunmalıdır.</p><p id="1d154a69-1696-80aa-b747-c6f7b6ef67d3" class="">•	Refah devleti anlayışı bu yaklaşımla uyumludur.</p><p id="1d154a69-1696-80cb-919d-f08f54053dc5" class="">•	Eğitim, sağlık, sosyal güvenlik gibi hizmetler <strong>kamu eliyle veya kamu destekli</strong> olarak sunulmalıdır.</p><p id="1d154a69-1696-8002-a42a-e56cd6b15119" class="">•	Amaç: <strong>Etkinlik ile birlikte adaletin sağlanması</strong>.</p><p id="1d154a69-1696-807c-b478-c2e0070a62f6" class="">
+</p><hr id="1d154a69-1696-8049-9ff5-d390e4d1b583"/><p id="1d154a69-1696-80f9-899c-e7a7cf8ff5c4" class="">
+</p><h1 id="1d154a69-1696-80da-a28e-c41ed0e28938" class=""><strong>2. Wagner Yasası Nedir?</strong></h1><p id="1d154a69-1696-80cf-9dda-c241fdede922" class="">•	Alman iktisatçı <strong>Adolf Wagner</strong> tarafından 19. yüzyılda geliştirilmiştir.</p><p id="1d154a69-1696-8003-bfc0-dc84e9983b2e" class="">•	Ana iddia: <strong>Ekonomik kalkınma arttıkça, kamu harcamalarının GSYH içindeki payı da artar.</strong></p><p id="1d154a69-1696-80ad-b2a4-f1ace3457cec" class="">•	Sebep: Refah düzeyi arttıkça, toplumun <strong>eğitim, sağlık, sosyal güvenlik</strong> gibi kamu hizmetlerine olan talebi de artar.</p><p id="1d154a69-1696-809c-8268-e4db94f79bdc" class="">•	Bu durum kamu harcamalarının <strong>gelir esnekliğinin 1’den büyük</strong> olduğunu gösterir.</p><p id="1d154a69-1696-80a6-9ff3-eb455787328b" class="">•	Yani: Gelir %1 artarsa, kamu harcamaları %1’den fazla artar.</p><p id="1d154a69-1696-80dd-b145-fca7c06dd98b" class="">•	Özellikle gelişmiş ülkelerde <strong>refah devleti</strong> uygulamaları bu yasayı destekler niteliktedir.</p><p id="1d154a69-1696-8089-9abe-fcce226c9519" class="">
+</p><hr id="1d154a69-1696-80eb-bd01-d6d5c89501a5"/><p id="1d154a69-1696-801d-8756-dd13984c7bcf" class="">
+</p><h1 id="1d154a69-1696-8078-949e-fc18dd72435e" class=""><strong>3. Baumol Hipotezi Nedir?</strong></h1><p id="1d154a69-1696-80fe-9abf-d1bec8917a18" class="">•	ABD’li iktisatçı <strong>William Baumol</strong> tarafından ortaya konmuştur.</p><p id="1d154a69-1696-8004-b438-ec21add9dabb" class="">•	<strong>“Maliyet hastalığı” (Cost Disease)</strong> olarak da bilinir.</p><p id="1d154a69-1696-805c-b62b-c5384ce1827e" class="">•	Temel gözlem:</p><p id="1d154a69-1696-806a-a354-fb28e1a98ef0" class="">•	Özel sektörde (örneğin sanayi) <strong>verimlilik sürekli artarken</strong>, kamu sektöründe (örneğin eğitim, sağlık) <strong>verimlilik artışı yavaştır veya yoktur</strong>.</p><p id="1d154a69-1696-808b-995e-f9efe3b0fcf4" class="">•	Ancak, kamu sektöründeki çalışan ücretleri, özel sektördeki ücret artışlarına <strong>paralel</strong> olarak yükselir.</p><p id="1d154a69-1696-8039-8bfd-c95e47f95c15" class="">•	Bu nedenle kamu hizmetlerinin <strong>maliyeti zamanla artar</strong>.</p><p id="1d154a69-1696-80f0-8caa-f66b3a793abf" class="">•	Üretilen hizmet miktarı sabit kalsa bile kamu harcamaları artış gösterir.</p><p id="1d154a69-1696-80ac-b7f0-f8aa2d6fd233" class="">•	Sonuç: <strong>Kamu harcamalarının GSYH içindeki payı artar.</strong></p><p id="1d154a69-1696-8087-9190-d5cf5ddc029c" class="">
+</p><hr id="1d154a69-1696-80bd-9502-fe765d2c4885"/><p id="1d154a69-1696-8097-b581-c3a567faa3d3" class="">
+</p><h1 id="1d154a69-1696-80d4-aa13-c6ecae1fadda" class=""><strong>4. Refah İktisadı Nedir? Kamu Ekonomisi Açısından Önemi Nedir?</strong></h1><p id="1d154a69-1696-8012-a1b6-ee76ab8751cb" class="">•	Refah iktisadı, <strong>kaynakların toplum refahını en üst düzeye çıkaracak şekilde nasıl dağıtılacağını</strong> inceleyen iktisat dalıdır.</p><p id="1d154a69-1696-8004-948c-d1be53fc17be" class="">•	Temel hedef: <strong>Toplumun toplam refahını maksimize etmek</strong>.</p><p id="1d154a69-1696-80a7-84ce-e03562df233d" class="">•	<strong>Pareto Etkinliği</strong>, refah iktisadının temel ilkelerindendir.</p><p id="1d154a69-1696-803a-a1ac-d0e184b464f4" class="">•	Bir bireyin durumunu iyileştirirken başkasının durumunu kötüleştirmeden yapılan değişiklik “Pareto iyileştirmesi” sayılır.</p><p id="1d154a69-1696-80e3-a265-f7ae3fc49eb2" class="">•	<strong>Kamu ekonomisi açısından önemi:</strong></p><p id="1d154a69-1696-801e-8eba-d2a47a9ab0f5" class="">•	Piyasa başarısızlıklarını analiz eder ve kamu müdahalesinin <strong>gerekçelerini</strong> sunar.</p><p id="1d154a69-1696-8003-87c0-e0d261179265" class="">•	Vergilendirme, kamu harcamaları ve gelir dağılımı konularında <strong>normatif temeller</strong> oluşturur.</p><p id="1d154a69-1696-80a7-95da-de23ffc46b09" class="">•	Adalet, eşitlik ve etkinlik dengesinin kurulmasında <strong>yol göstericidir</strong>.</p><hr id="1d154a69-1696-803a-a9f9-d6f5d929e35f"/><p id="1d154a69-1696-8012-a52d-fa8bdde20fef" class=""><strong>5. Eski Refah Okulu Nedir? (Pigou, Bentham, Sidgwick, Edgeworth, Marshall)</strong></p><p id="1d154a69-1696-8085-ba2b-c822c8e2031d" class="">•		19.	yüzyılın sonları ve 20. yüzyılın başlarında etkili olmuştur.</p><p id="1d154a69-1696-80f6-8ef6-fd197570fc12" class="">•	Temsilcileri: <strong>Arthur Pigou</strong>, <strong>Jeremy Bentham</strong>, <strong>Henry Sidgwick</strong>, <strong>Francis Edgeworth</strong>, <strong>Alfred Marshall</strong>.</p><p id="1d154a69-1696-802c-a0e7-dafb8da6eaea" class="">•	Temel görüş: <strong>Refah, bireylerin faydalarının toplamıdır.</strong></p><p id="1d154a69-1696-80e3-b6c3-f91a74cae91e" class="">•	Refah artışı → <strong>Toplumun bireysel faydalarının toplamı artarsa</strong> sağlanmış olur.</p><p id="1d154a69-1696-800c-950e-f7ebd63deeea" class="">•	<strong>Faydacı yaklaşım</strong>: “En büyük sayıda insanın en büyük mutluluğu” ilkesi savunulur (Bentham).</p><p id="1d154a69-1696-802f-8ea3-efa96c310fb7" class="">•	<strong>Pigou’nun katkısı</strong>:</p><p id="1d154a69-1696-8064-9c51-d8f675a7d1e2" class="">•	Dışsallıklar teorisini geliştirdi.</p><p id="1d154a69-1696-8006-bea3-c165d3efac21" class="">•	Devlet müdahalesiyle dışsallıklar düzeltilmeli ve <strong>toplam sosyal fayda artırılmalıdır</strong>.</p><p id="1d154a69-1696-80ec-9acb-e19a39a43b6f" class="">•	Vergi ve sübvansiyonlar, piyasa dışsallıklarını düzeltmek için araç olarak önerilir.</p><p id="1d154a69-1696-80e4-8d98-f3bb7d3211ea" class="">
+</p><hr id="1d154a69-1696-80ae-83e9-db883b1db092"/><p id="1d154a69-1696-80ee-8060-c1c93ac22637" class="">
+</p><p id="1d154a69-1696-80ad-9c8a-d02accf07ace" class="">
+</p><h1 id="1d154a69-1696-80dd-9638-f2930d0c5b13" class=""><strong>YENİ REFAH OKULU (PARETO, HICKS, KALDOR, BUCHANAN, DAVIS, WINSTON, …)</strong></h1><p id="1d154a69-1696-808e-b3a1-d5e51cf7b33c" class="">
+</p><h2 id="1d154a69-1696-80d2-97e6-ea77cac6b4c1" class=""><strong>Tanımı ve Genel Görüşleri</strong></h2><p id="1d154a69-1696-80f3-b168-c8fab331c942" class="">Yeni Refah Okulu, refah ekonomisinin ikinci evresini temsil eder ve 20. yüzyılın ortalarında ortaya çıkmıştır. Bu okul, <strong>refahın ölçülmesinde</strong> ve <strong>ekonomik etkinliğin değerlendirilmesinde</strong> daha nesnel, birey temelli ve kıyaslamalı yaklaşımlar geliştirmiştir.</p><p id="1d154a69-1696-8078-8c3b-fad0e30572e3" class="">
+</p><h2 id="1d154a69-1696-803d-8aff-e111024bf6b5" class=""><strong>Ne Savunurlar?</strong></h2><p id="1d154a69-1696-8016-bb91-d6f01803f0a4" class="">•	<strong>Kardinal değil ordinal fayda</strong>: Bireylerin faydaları ölçülemez, ancak tercih sıraları yapılabilir.</p><p id="1d154a69-1696-807c-9e3f-cac0a15a8e79" class="">•	<strong>Bireylerin kendi çıkarlarını en iyi kendilerinin bildiği</strong> varsayımı geçerlidir.</p><p id="1d154a69-1696-80cb-8472-da3fbae84c81" class="">•	<strong>Devlet müdahalesi</strong>, bireylerin rızasına dayanmalıdır (özellikle Buchanan’ın kamu tercihi teorisi).</p><p id="1d154a69-1696-8028-aec1-f3c33db9f0b7" class="">•	<strong>Toplum refahı artışı</strong>, bireylerden en az birinin durumunun iyileşip, kimsenin durumunun kötüleşmemesiyle mümkündür (Pareto Etkinliği).</p><p id="1d154a69-1696-80ca-aa1a-d4cec49b84f4" class="">•	Tüm bireylerin faydalarının <strong>parasal ölçümlerle telafi edilebilmesi</strong>, refah artışını gösterebilir (Kaldor-Hicks kriteri).</p><p id="1d154a69-1696-8001-b5ce-dbbe27a7846e" class=""><strong>Öncü İsimler</strong></p><p id="1d154a69-1696-8098-ae95-cc8ea7f708a4" class="">•	<strong>Vilfredo Pareto</strong>: Pareto etkinliği kavramını geliştirmiştir.</p><p id="1d154a69-1696-805f-9811-d5d40e75f064" class="">•	<strong>Nicholas Kaldor ve John Hicks</strong>: Telafi kriterlerini ortaya koyarak bireyler arası fayda kıyaslamasını nesnelleştirmeye çalışmışlardır.</p><p id="1d154a69-1696-8046-81c9-feb9c020464a" class="">•	<strong>James Buchanan</strong>: Kamu tercihi teorisiyle kamu ekonomisini bireysel tercihlere göre analiz etmiştir.</p><p id="1d154a69-1696-808e-a966-d7a7747db9c7" class="">•	<strong>Otto Davis, Clifford Winston</strong>: Kamu politikalarının etkinliğini ölçmeye yönelik modern modeller geliştirmişlerdir.</p><hr id="1d154a69-1696-8064-b00e-d5825a989677"/><p id="1d154a69-1696-8059-80ec-c364511b15a5" class="">
+</p><h1 id="1d154a69-1696-8024-88cc-f5710c929b86" class=""><strong>PARETO OPTİMUMU (ETKİNLİĞİ) NEDİR?</strong></h1><p id="1d154a69-1696-80ae-a259-dd3fc15fd1c6" class="">
+</p><h2 id="1d154a69-1696-8074-babd-e80c17478c59" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-809e-b7b1-e7c2afa36fe8" class="">Pareto Optimumu, mevcut kaynakların öyle bir şekilde dağıtılmasıdır ki, <strong>bir bireyin durumunu iyileştirirken başka bir bireyin durumunu kötüleştirmek mümkün değildir.</strong></p><p id="1d154a69-1696-80e0-a1fe-f56cddcfe422" class="">
+</p><h2 id="1d154a69-1696-80d1-9eb7-ff05038427ce" class=""><strong>Temel Özellikleri</strong></h2><p id="1d154a69-1696-804e-af42-f218cfe2ed45" class="">•	Etkinlik ölçütüdür, adalet ölçütü değildir.</p><p id="1d154a69-1696-803a-9526-c0a6d5a11757" class="">•	Birden fazla Pareto Optimumu olabilir.</p><p id="1d154a69-1696-80c9-8c70-e7b8fd4ff9be" class="">•	Kaynaklar tam rekabet piyasasında serbestçe dağıtıldığında bu noktaya ulaşılabilir.</p><p id="1d154a69-1696-8028-a599-f508af3f2504" class="">•	Hiç kimsenin durumu kötüleşmeden bir iyileştirme yapılamazsa sistem Pareto etkin kabul edilir.</p><p id="1d154a69-1696-808f-bc51-cbaa9e10c715" class="">
+</p><hr id="1d154a69-1696-8078-a0dc-d0fd08b25504"/><p id="1d154a69-1696-80b6-8bd7-e77e0b022de6" class="">
+</p><h1 id="1d154a69-1696-808e-a365-f1cd545ba357" class=""><strong>KALDOR - HICKS TELÂFİ (TAZMİN) KRİTERİ NEDİR?</strong></h1><p id="1d154a69-1696-8006-9b0b-c9466fe4dc3b" class="">
+</p><h2 id="1d154a69-1696-80d3-98c5-d433b2086407" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-8041-a907-f77cd5479402" class="">Kaldor-Hicks Kriteri, bir politika değişikliğinin toplum refahını artırdığını, <strong>kazananların kaybedenlere tazminat ödeyerek onları telafi edebileceği</strong> durumda ileri sürer.</p><p id="1d154a69-1696-8079-a1ad-eefeb7fef83b" class="">
+</p><h2 id="1d154a69-1696-80a5-bb6d-cc6ebcf238b1" class=""><strong>Uygulama Prensibi</strong></h2><p id="1d154a69-1696-8066-825a-eaea0b58fac7" class="">•	Tazminat <strong>gerçekleşmek zorunda değildir</strong>, sadece potansiyel olarak mümkün olmalıdır.</p><p id="1d154a69-1696-80d2-a763-cb0f664d08be" class="">•	Bir taraf kazançlı çıkıyor, diğer taraf kaybediyorsa; eğer kazananlar, kayıpları telafi ettikten sonra hala kârdaysa, bu durum <strong>refah artırıcıdır</strong>.</p><p id="1d154a69-1696-80ee-8a30-d418e4f541ea" class=""><strong>Önemli Noktalar</strong></p><p id="1d154a69-1696-806e-8697-e5628142f443" class="">•	Pratikte maliyet-fayda analizinin temelidir.</p><p id="1d154a69-1696-8008-9ece-e7267f0e4515" class="">•	Adalet yerine <strong>ekonomik etkinliği</strong> esas alır.</p><p id="1d154a69-1696-80f1-8d01-e662a68421e7" class="">•	Bu kriter Pareto’ya göre daha esnektir ve <strong>refah kıyaslaması yapmaya imkân tanır.</strong></p><p id="1d154a69-1696-80cc-96e9-c656a8255b1b" class="">
+</p><hr id="1d154a69-1696-80a4-ae53-fe7297c8eaf8"/><p id="1d154a69-1696-8084-a88b-d684dadc0ea5" class="">
+</p><h1 id="1d154a69-1696-804e-bb12-cc93686af46b" class=""><strong>PİYASA BAŞARISIZLIĞI NEDİR?</strong></h1><p id="1d154a69-1696-8002-ac16-d698096fc6c2" class="">
+</p><h2 id="1d154a69-1696-80d6-b095-c4a5f76d3667" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-80e3-af1d-eb08a6c4729e" class="">Piyasa başarısızlığı, <strong>serbest piyasa mekanizmasının kaynakları etkin şekilde dağıtamaması</strong> durumudur. Yani, piyasanın kendi hâline bırakıldığında <strong>toplumsal refahı maksimize edememesi</strong>.</p><p id="1d154a69-1696-8057-9ad2-c329c523cd44" class="">
+</p><h2 id="1d154a69-1696-8099-924b-fedeacbb9bb4" class=""><strong>Nedenleri</strong></h2><p id="1d154a69-1696-8028-8e66-eee22c7edd94" class="">•	Tam rekabetin varsayımlarının gerçekleşmemesi</p><p id="1d154a69-1696-803f-bf2e-e091e5e53282" class="">•	Dışsallıkların varlığı</p><p id="1d154a69-1696-8062-bdc8-c063f9a58fd9" class="">•	Kamu mallarının piyasada sağlanamaması</p><p id="1d154a69-1696-80b3-aa9d-df6dbca5eb9a" class="">•	Bilgi asimetrisi ve eksik bilgi</p><p id="1d154a69-1696-8086-89bd-e7e0a44c894b" class="">•	Doğal tekellerin varlığı</p><p id="1d154a69-1696-8024-a379-ca07f0fbebb4" class="">
+</p><h2 id="1d154a69-1696-801d-92c1-fbd8c094e2bf" class=""><strong>Sonuçları</strong></h2><p id="1d154a69-1696-80db-aa21-d3a4290d7dd3" class="">•	Kaynak israfı</p><p id="1d154a69-1696-8039-b2ed-e7bc8513e190" class="">•	Sosyal refah kaybı</p><p id="1d154a69-1696-8097-91ff-f02be6b34e7d" class="">•	Gelir dağılımı bozukluğu</p><p id="1d154a69-1696-8061-861d-c0b6e8fca54d" class="">•	Kamu müdahalesi gerekliliği</p><p id="1d154a69-1696-800c-ba3e-ef3904684602" class="">
+</p><hr id="1d154a69-1696-80c4-bdea-ee1f5004225a"/><p id="1d154a69-1696-8075-ab9f-e72338574dd7" class="">
+</p><h1 id="1d154a69-1696-80b7-9195-c0bdffd8cc99" class=""><strong>KAMU SEKTÖRÜNÜ GEREKLİ KILAN PİYASA BAŞARISIZLIKLARI</strong></h1><p id="1d154a69-1696-8077-8a46-de2fc56bf05b" class="">
+</p><h2 id="1d154a69-1696-80e5-aa28-cfc78cc1fc04" class=""><strong>1. KAMU MALLARI</strong></h2><p id="1d154a69-1696-8030-91e2-cea2ada53e13" class="">•	<strong>Tanım</strong>: Tüketiminde rekabetin olmadığı ve dışlanabilirliğin mümkün olmadığı mallardır.</p><p id="1d154a69-1696-8029-a503-c2da0e1bac3e" class="">•	<strong>Örnek</strong>: Savunma, deniz feneri, sokak aydınlatması.</p><p id="1d154a69-1696-805e-97c1-c88971dcc3ab" class="">•	<strong>Piyasa Sorunu</strong>: Serbest piyasada kâr elde edilemeyeceği için bu mallar özel sektör tarafından sağlanmaz.</p><p id="1d154a69-1696-8018-a84a-e1b09c97428c" class="">•	<strong>Çözüm</strong>: Devlet tarafından sağlanır ve vergiyle finanse edilir.</p><p id="1d154a69-1696-8002-9ba4-ee9acf69c06e" class="">
+</p><h2 id="1d154a69-1696-809f-ac4e-e5c733d48a1b" class=""><strong>2. DIŞSALLIKLAR (EXTERNALITIES)</strong></h2><p id="1d154a69-1696-8041-add1-ea1f0920e4b3" class="">•	<strong>Tanım</strong>: Bir ekonomik faaliyetin, üçüncü şahısları etkileyen ama piyasada fiyatlanmayan yan etkileridir.</p><p id="1d154a69-1696-80c0-8c8c-ea94d911f57b" class="">•	<strong>Türleri</strong>:</p><p id="1d154a69-1696-8036-bb9d-f09110ed22b9" class="">•	<strong>Olumlu dışsallık</strong>: Aşı olmak → toplum sağlığına katkı.</p><p id="1d154a69-1696-8078-a109-dcdf63fc7af2" class="">•	<strong>Olumsuz dışsallık</strong>: Fabrika atıkları → çevre kirliliği.</p><p id="1d154a69-1696-80cb-8501-d1c38a17c1d1" class="">•	<strong>Piyasa Sorunu</strong>: Fiyatlar bu etkileri yansıtmaz, üretim ve tüketim kararları toplumsal açıdan optimal değildir.</p><p id="1d154a69-1696-8000-8b78-d685d21b37bb" class="">•	<strong>Çözüm</strong>: Devlet düzenlemesi, vergiler, sübvansiyonlar.</p><p id="1d154a69-1696-80b0-ba10-dbe1a759a93e" class="">
+</p><h2 id="1d154a69-1696-80aa-8789-efbe5294de9d" class=""><strong>3. AKSAK REKABET</strong></h2><p id="1d154a69-1696-8080-a77f-f45ef67fd168" class="">•	<strong>Tanım</strong>: Tam rekabet koşullarının sağlanmadığı piyasa yapılarıdır (tekel, oligopol vb.).</p><p id="1d154a69-1696-8072-a0b4-e8148eeee2e4" class="">•	<strong>Sorunlar</strong>:</p><p id="1d154a69-1696-8017-856b-c54686daecea" class="">•	Fiyatlar yapay olarak yüksek olur.</p><p id="1d154a69-1696-8005-ad4c-e1e4f4862d51" class="">•	Üretim azalır, kaynaklar yanlış tahsis edilir.</p><p id="1d154a69-1696-800d-b16c-cd291c60eec6" class="">•	<strong>Çözüm</strong>: Rekabet yasaları, tekel düzenlemeleri.</p><p id="1d154a69-1696-80d9-a9fb-fdae45611fdb" class="">
+</p><h2 id="1d154a69-1696-8011-82c7-fa5f4c70fa56" class=""><strong>4. BİLGİ EKSİKLİĞİ VE ASİMETRİK BİLGİ</strong></h2><p id="1d154a69-1696-8027-80ff-c896e1d4bd11" class="">•	<strong>Tanım</strong>: Piyasada taraflardan birinin diğerine göre daha fazla bilgiye sahip olmasıdır.</p><p id="1d154a69-1696-80e2-a2be-e82dde3b9ffd" class="">•	<strong>Örnek</strong>:</p><p id="1d154a69-1696-80b1-8c73-f598dd76cd1b" class="">•	Sigorta sektöründe müşterinin sağlık durumunu daha iyi bilmesi.</p><p id="1d154a69-1696-8078-b468-c800c463b70a" class="">•	İkinci el araba piyasasında satıcının aracın sorunlarını gizlemesi (lemons problemi).</p><p id="1d154a69-1696-8021-9bf6-c62c8cdc56fd" class="">•	<strong>Sonuç</strong>: Piyasada güven bozulur, kaliteli ürünler elenir.</p><p id="1d154a69-1696-806a-93db-ea9b33a7a816" class="">•	<strong>Çözüm</strong>: Devletin bilgi sağlama görevini üstlenmesi, düzenleyici kurumlar.</p><p id="1d154a69-1696-80c8-9e0b-e4a077787533" class="">
+</p><hr id="1d154a69-1696-8005-b1c5-dd236fcc4458"/><p id="1d154a69-1696-8011-95fc-c011f4d10747" class="">
+</p><h1 id="1d154a69-1696-80c7-8220-c7e689d42e76" class=""><strong>BİR MALIN KAMU TARAFINDAN TEDARİK EDİLMESİ GEREKLİLİĞİNİ NE BELİRLER? BU TÜR MALLARIN ÖZELLİKLERİ NELERDİR?</strong></h1><p id="1d154a69-1696-8074-8bb9-fdb0eab55992" class="">
+</p><h2 id="1d154a69-1696-80e9-8b81-e3a50f5af769" class=""><strong>Bir Malın Kamu Tarafından Sağlanma Gerekliliğini Belirleyen Unsurlar</strong></h2><p id="1d154a69-1696-80e1-9a57-dea8fca5d106" class="">Bir malın kamu tarafından sağlanması gerektiğini belirleyen temel kriterler:</p><p id="1d154a69-1696-8084-afd8-faa552533371" class="">•	<strong>Piyasa başarısızlığı durumu</strong>: Malın özel piyasada yeterli ya da etkin şekilde sunulamaması.</p><p id="1d154a69-1696-8009-9181-f37e3a0b0ce3" class="">•	<strong>Toplumsal refah gerekliliği</strong>: Malın varlığı toplumun genel yararı için hayati olabilir (örneğin savunma).</p><p id="1d154a69-1696-80e8-87fe-d080da984049" class="">•	<strong>Kamu tercihi teorileri</strong>: Toplumun üyelerinin kolektif tercihleri kamu üretimini zorunlu kılabilir.</p><p id="1d154a69-1696-8063-aec4-c3464c0653ae" class="">•	<strong>Maliyet-etkinlik</strong>: Ölçek ekonomileri nedeniyle kamu üretimi daha ucuz olabilir (doğal tekel örneklerinde olduğu gibi).</p><p id="1d154a69-1696-8008-9eed-d90c51a21a3a" class="">
+</p><h2 id="1d154a69-1696-8086-b2df-db704064a078" class=""><strong>Kamu Mallarının Özellikleri</strong></h2><h3 id="1d154a69-1696-800e-a763-c1e124e8b948" class="">1.	<strong>Tüketimde Rekabetsizlik (Non-rivalry)</strong></h3><p id="1d154a69-1696-80e5-9fda-dff9e3c669d3" class="">•	Bir bireyin tüketimi, diğer bireylerin tüketimini azaltmaz.</p><p id="1d154a69-1696-80fa-af1f-dff8aa87e62b" class="">•	Örnek: Sokak lambası, bir kişi yararlanırken diğeri de aynı hizmetten etkilenir.</p><p id="1d154a69-1696-8093-9679-c148aea5b158" class="">
+</p><h3 id="1d154a69-1696-809e-922a-eb2ae820a3c9" class="">2.	<strong>Dışlanamazlık (Non-excludability)</strong></h3><p id="1d154a69-1696-80e8-a7ef-c56b499467f2" class="">•	Bir bireyin maldan faydalanması engellenemez.</p><p id="1d154a69-1696-80c1-a6a2-f902b225828e" class="">•	Örnek: Hava savunma sistemi tüm ülkeyi korur, kimseyi hariç tutamazsınız.</p><p id="1d154a69-1696-8051-942c-daac08bf7054" class="">
+</p><h3 id="1d154a69-1696-80b4-af42-f30649ea274b" class="">3.	<strong>Serbest Binen (Free Rider) Sorunu</strong></h3><p id="1d154a69-1696-80fd-8b6b-d66fceb59c80" class="">•	İnsanlar ödeme yapmadan kamu mallarından yararlanmak ister.</p><p id="1d154a69-1696-800a-952c-cbb666314b47" class="">•	Bu nedenle özel sektör bu malları üretmeye teşvik edilmez.</p><p id="1d154a69-1696-806e-b1d8-feda78bc9498" class="">
+</p><hr id="1d154a69-1696-8040-9580-c9ff26feeb3c"/><p id="1d154a69-1696-80b3-a4bb-f7877697fff1" class="">
+</p><h1 id="1d154a69-1696-805c-9cd4-edee8495a675" class=""><strong>EĞER DEVLET TOPLUMUN TÜM BİREYLERİNİN TERCİHLERİNİ BİLİRSE KAMU MALLARININ ARZI NASIL BELİRLENMELİDİR?</strong></h1><p id="1d154a69-1696-80f5-ab29-f693f0bfb003" class="">
+</p><h2 id="1d154a69-1696-80ed-9886-c2f87d2d2548" class=""><strong>Teorik Olarak Optimal Kamu Malı Arzı</strong></h2><p id="1d154a69-1696-80bc-873f-f4768b049bfa" class="">Devlet, tüm bireylerin tercih ve fayda fonksiyonlarını biliyorsa:</p><p id="1d154a69-1696-8048-a459-e580705d5ae1" class="">•	<strong>Samuelson Kuralı</strong> uygulanır:</p><blockquote id="1d154a69-1696-80ad-8e81-cc34508dbbc5" class="">Kamu mallarında<p id="1d154a69-1696-8044-b5cc-e3eac34c6561" class=""><strong>toplam marjinal fayda = marjinal maliyet</strong></p></blockquote><p id="1d154a69-1696-806a-9de4-fdd5d2713426" class="">•	<strong>Formül olarak</strong>:</p><blockquote id="1d154a69-1696-8088-8186-fd80a8d97fc2" class="">∑MÜFᵢ = Maliyet</blockquote><blockquote id="1d154a69-1696-80b9-a003-c95a10734b91" class="">(Burada MÜFᵢ: i’nci bireyin marjinal ödeme isteği/faydası)</blockquote><p id="1d154a69-1696-809d-86e8-de67210d6984" class="">•	Yani, bireylerin kamu malına olan bireysel katkı istekleri <strong>toplanarak</strong> kamu malının arz düzeyi belirlenir (bu, özel mallardan farklıdır, çünkü özel mallarda bireysel faydalar kıyaslanır, toplanmaz).</p><p id="1d154a69-1696-806f-a7b9-e55adee90999" class="">
+</p><hr id="1d154a69-1696-803b-8f0c-cd4bb0233122"/><p id="1d154a69-1696-8050-ba1c-f775ecd32d34" class="">
+</p><h1 id="1d154a69-1696-807a-ab87-c9c10127ab48" class=""><strong>GERÇEKTE KAMU MALLARININ ARZI NASIL BELİRLENMEKTEDİR? BU OPTİMAL KAMU MALI ARZI İLE NE ŞEKİLDE FARKLILAŞMAKTADIR?</strong></h1><h2 id="1d154a69-1696-8062-93c6-dcb852222d8c" class=""><strong>Gerçek Yaşamdaki Durum</strong></h2><p id="1d154a69-1696-80b9-ac86-f7440c32a346" class="">•	Devlet, bireylerin gerçek tercihlerine <strong>doğrudan ulaşamaz</strong>.</p><p id="1d154a69-1696-8040-bd65-e73abcb52e10" class="">•	Bu nedenle:</p><p id="1d154a69-1696-807b-ab3b-c7e342c15041" class="">•	Siyasal sistemler (seçimler, temsilciler)</p><p id="1d154a69-1696-80ad-a082-d6b808f6d4de" class="">•	Anketler, kamuoyu yoklamaları</p><p id="1d154a69-1696-8024-a9c5-d795f2609000" class="">•	Bütçe tahsis süreçleriyle karar alınır.</p><p id="1d154a69-1696-8082-aff9-fa12bef1c073" class="">
+</p><h2 id="1d154a69-1696-800c-b999-e517e9cf7050" class=""><strong>Farklılaşma Nedenleri</strong></h2><p id="1d154a69-1696-80ef-a2af-f6eace961cac" class="">•	<strong>Bilgi eksikliği</strong>: Devlet, bireylerin gerçek fayda düzeylerini ve ödeme isteklerini tam olarak bilmez.</p><p id="1d154a69-1696-80ed-af07-ee4a79d92fac" class="">•	<strong>Serbest binen davranışı</strong>: Bireyler tercihlerini düşük göstererek daha az vergiyle daha çok kamu hizmeti almak ister.</p><p id="1d154a69-1696-8005-a3e6-cd40cec77a3a" class="">•	<strong>Siyasi etkiler</strong>: Kararlar ekonomik etkinlikten çok politik çıkarlarla şekillenebilir.</p><p id="1d154a69-1696-8010-ad23-f97c2a3e0622" class="">•	<strong>Lobicilik ve baskı grupları</strong>: Kamu malı arzı bazı grupların çıkarları doğrultusunda şekillenebilir.</p><p id="1d154a69-1696-8090-8ec7-cc010b0673b1" class="">•	<strong>Vergi adaletsizlikleri</strong>: Faydalanan ve ödeyen arasında denge sağlanamayabilir.</p><p id="1d154a69-1696-8064-a609-f99c5ed0249f" class="">
+</p><hr id="1d154a69-1696-8035-b125-fccbeffd26fb"/><p id="1d154a69-1696-808e-820f-daec1e41dc25" class="">
+</p><h1 id="1d154a69-1696-8015-a4de-dbda6a4f811c" class=""><strong>DEVLET, KAMU MALLARININ TEDARİK EDİLMESİNDE TOPLUMUN ÜYELERİNİN TERCİHLERİNİ NE ŞEKİLDE DOĞRU OLARAK ORTAYA ÇIKARABİLİR?</strong></h1><p id="1d154a69-1696-8095-9839-e7199f3f81d1" class="">
+</p><h2 id="1d154a69-1696-8024-b88c-f2b8980867b1" class=""><strong>Teorik Yaklaşımlar</strong></h2><p id="1d154a69-1696-8098-8283-c20cfc436250" class="">
+</p><h3 id="1d154a69-1696-807a-bcc0-d64c1c7d9e22" class="">1.	<strong>Revealed Preference (Açığa Çıkarılmış Tercihler)</strong></h3><p id="1d154a69-1696-8052-8e2a-d4e7276a0c72" class="">•	İnsanların davranışlarından tercihleri analiz edilir.</p><p id="1d154a69-1696-80e7-9769-ff3c4480517b" class="">•	Örneğin özel güvenliğe ne kadar para ödüyorlar → kamu güvenliği değerini anlamak.</p><p id="1d154a69-1696-80ce-a51b-f1430a958da3" class="">
+</p><h3 id="1d154a69-1696-80e4-9f72-e457df263ec6" class="">2.	<strong>Oylama Sistemleri ve Kamu Tercihi Teorisi</strong></h3><p id="1d154a69-1696-8032-9bfe-df06976fb88f" class="">•	Seçimler, referandumlar, anketlerle bireylerin tercihi ortaya çıkarılmaya çalışılır.</p><p id="1d154a69-1696-80e0-a5c5-c29c6a705c69" class="">•	Ancak bu sistemlerde çoğunluğun tercihi azınlıkları mağdur edebilir.</p><p id="1d154a69-1696-8091-b25f-e8d616b56ee8" class="">
+</p><h3 id="1d154a69-1696-80cf-8104-d3c07c551d46" class="">3.	<strong>Clarke-Groves Mekanizması</strong> (İleri düzey teorik model)</h3><p id="1d154a69-1696-8084-bdc5-fbb06d800a31" class="">•	Bireylerin gerçek tercihlerine göre vergi ödeyeceği sistem önerir.</p><p id="1d154a69-1696-80f1-9e91-c2902d054c1b" class="">•	Ancak pratikte karmaşık ve uygulanması zordur.</p><p id="1d154a69-1696-8013-a1eb-d0eca8bb0303" class="">
+</p><h3 id="1d154a69-1696-8045-93d5-d47be093cf06" class=""><strong>Uygulamada Kullanılan Yöntemler</strong></h3><p id="1d154a69-1696-80e6-8054-e714e3bcb34e" class="">•	Katılımcı bütçeleme</p><p id="1d154a69-1696-8085-a84b-c4e2201c4a83" class="">•	Kamuoyu araştırmaları</p><p id="1d154a69-1696-80ff-9039-dcada233737c" class="">•	Temsilciler aracılığıyla karar alma (parlamenter sistem)</p><p id="1d154a69-1696-80ff-8051-d836791ae11c" class="">•	Maliyet-fayda analizleri</p><p id="1d154a69-1696-80d5-87b3-c818ecd2925a" class="">
+</p><hr id="1d154a69-1696-80bf-9fff-e6d1afdcba00"/><p id="1d154a69-1696-802e-97df-d494da17cd46" class="">
+</p><h1 id="1d154a69-1696-80c7-a2c9-ec1246d929b3" class=""><strong>ERDEMLİ MAL NEDİR?</strong></h1><p id="1d154a69-1696-8084-b736-fd3549691097" class="">
+</p><h2 id="1d154a69-1696-8084-a11b-e4196b2a6fdc" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-802f-99e4-d65a6d434a7f" class=""><strong>Erdemli mallar (Merit Goods)</strong>, bireylerin <strong>farkında olmasalar bile</strong> faydalarına olduğuna inanılan ve bu nedenle <strong>devlet tarafından desteklenen veya zorunlu kılınan</strong> mal ve hizmetlerdir.</p><p id="1d154a69-1696-80fd-8f89-c00c70d85890" class="">
+</p><h2 id="1d154a69-1696-80fb-8736-fb80013e3387" class=""><strong>Özellikleri</strong></h2><p id="1d154a69-1696-80c1-86bb-f39a3673e55c" class="">•	Bireylerin kendi başına yeterince talep etmediği ama toplumsal refah açısından önemli olan mallardır.</p><p id="1d154a69-1696-8003-b9a5-c3888c5ae5b1" class="">•	Talep yetersizliğinin nedeni bilgi eksikliği, kısa vadeli düşünme ya da bireysel ihmaller olabilir.</p><p id="1d154a69-1696-8059-acb5-e41f04452daa" class="">
+</p><h3 id="1d154a69-1696-8089-80ab-d23a3c835070" class=""><strong>Örnekler</strong></h3><p id="1d154a69-1696-800b-a3ec-f28fe67db738" class="">•	Zorunlu eğitim</p><p id="1d154a69-1696-8012-8099-eb7bb252710d" class="">•	Aşı kampanyaları</p><p id="1d154a69-1696-80ce-8f79-c0423a5d2b2d" class="">•	Organ bağışı</p><p id="1d154a69-1696-80d1-9a78-fe0c919e93cb" class="">•	Emniyet kemeri kullanımı</p><p id="1d154a69-1696-8005-b502-d858d5db4ec8" class="">
+</p><h3 id="1d154a69-1696-80fc-b5b7-f245e0ada8c4" class=""><strong>Devlet Müdahalesi Neden Gerekir?</strong></h3><p id="1d154a69-1696-80f0-b4bc-ea671f355881" class="">•	Bireyler uzun vadeli faydaları göz ardı eder.</p><p id="1d154a69-1696-808a-a8db-d1f6b6084630" class="">•	Toplumun genel yararı bireylerin kısa vadeli tercihleriyle çelişebilir.</p><p id="1d154a69-1696-8076-81cf-ee64cd21a367" class="">•	Dışsallıklar yaratır: Örneğin, bir kişinin aşı olması toplumun bağışıklığını da artırır.</p><p id="1d154a69-1696-802e-85d7-cf99cf0096c1" class="">
+</p><hr id="1d154a69-1696-80fd-b154-eca683779840"/><p id="1d154a69-1696-80b5-ac66-dcd199eb6673" class="">
+</p><h1 id="1d154a69-1696-80a2-8db5-ca3b0b59b31d" class=""><strong>KULÜP MALLARI (CLUB GOODS) NEDİR?</strong></h1><p id="1d154a69-1696-8059-8109-c8c1854bf16a" class="">
+</p><h2 id="1d154a69-1696-80d9-9a24-c82cbda7c5ba" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-80d4-8dcb-ec01133f11fb" class="">Kulüp malları, <strong>tüketiminde rekabetin olmadığı</strong> ancak <strong>dışlanabilirliğin mümkün olduğu</strong> mal ve hizmetlerdir.</p><p id="1d154a69-1696-80f3-9a50-e1c7e4d99888" class="">Yani, belirli bir grup birey malı ortaklaşa tüketebilirken, ödeme yapmayanlar dışlanabilir.</p><p id="1d154a69-1696-8046-aba2-f56258332894" class="">
+</p><h2 id="1d154a69-1696-80fd-a9d4-cd5907b4481c" class=""><strong>Özellikleri</strong></h2><p id="1d154a69-1696-8056-8861-cce0b7d62cbd" class="">•	<strong>Kamu malı ve özel mal arasında bir yerdedir.</strong></p><p id="1d154a69-1696-80ca-8288-e17c96af546c" class="">•	Kapasite sınırı vardır → Aşırı tüketim durumunda rekabet oluşabilir.</p><p id="1d154a69-1696-80e1-a78b-f35525bdd5f9" class="">•	Genellikle üyelik veya ödeme şartı ile kullanılır.</p><p id="1d154a69-1696-80e7-bef1-ecfb9f279402" class="">
+</p><h2 id="1d154a69-1696-806b-864c-ddd722b34f0d" class=""><strong>Örnekler</strong></h2><p id="1d154a69-1696-8038-9d00-fe73667e15eb" class="">•	Üyelik gerektiren spor salonları</p><p id="1d154a69-1696-80f3-bb2f-df0dbe265674" class="">•	Şifreli televizyon yayınları</p><p id="1d154a69-1696-800f-ae15-d76e0d158571" class="">•	Özel otoyollar</p><p id="1d154a69-1696-80dc-8243-d8f88f694efb" class="">•	Online platform abonelikleri (örneğin Netflix)</p><p id="1d154a69-1696-80ea-af02-d631ce59be71" class="">
+</p><h2 id="1d154a69-1696-80c4-b7fc-d947c647c60d" class=""><strong>Ekonomik Sorun</strong></h2><p id="1d154a69-1696-80f9-b51c-e952ea5629b1" class="">•	Erişim fiyatlaması nasıl belirlenmeli?</p><p id="1d154a69-1696-80d5-969a-e8a764ade7a7" class="">•	Optimal kulüp büyüklüğü nedir?</p><p id="1d154a69-1696-80f9-9880-db0b26443701" class="">•	Kapasite arttıkça marjinal maliyet artar mı?</p><p id="1d154a69-1696-80a8-8de8-eac41d1d7935" class="">
+</p><hr id="1d154a69-1696-8072-b264-d0de4fe25c5d"/><p id="1d154a69-1696-802e-9b69-ea0018ea4eb8" class="">
+</p><h1 id="1d154a69-1696-8082-8c22-fa9dec4a6334" class=""><strong>DEVLET PİYASAYA MÜDAHALE ETMELİ MİDİR? GEREKÇELERİ İLE BİRLİKTE BU KONUDAKİ FARKLI GÖRÜŞLER</strong></h1><p id="1d154a69-1696-80bf-9712-c71c3786d525" class="">
+</p><h2 id="1d154a69-1696-8094-ab08-cf0adbb3e81f" class=""><strong>Evet, Müdahale Etmelidir Diyenler</strong></h2><h3 id="1d154a69-1696-80d3-954f-d4ccc6cce696" class=""><strong>Gerekçeler:</strong></h3><p id="1d154a69-1696-8049-a5ff-c75e38c08472" class="">•	<strong>Piyasa başarısızlıkları</strong>: Kamu malları, dışsallıklar, bilgi asimetrisi.</p><p id="1d154a69-1696-803a-a43a-fbe7c8d6c229" class="">•	<strong>Gelir dağılımı adaleti</strong>: Piyasa sadece etkinlik sağlar, adaleti sağlamaz.</p><p id="1d154a69-1696-8027-b356-d575d34a91e5" class="">•	<strong>Makroekonomik istikrar</strong>: Enflasyon, işsizlik gibi durumlar piyasa tarafından çözülemez.</p><p id="1d154a69-1696-8076-b74e-e3b3082303d7" class="">•	<strong>Doğal tekeller</strong>: Devlet müdahalesi olmadan bu alanlar sömürüye açıktır.</p><p id="1d154a69-1696-80e7-abbd-c3414bb379f0" class="">•	<strong>Erdemli mallar</strong>: Toplumun yararına bazı mallar zorunlu olmalıdır.</p><p id="1d154a69-1696-80df-9a35-ec1c1f27ba02" class="">
+</p><h2 id="1d154a69-1696-80e0-93e5-eb9887881a11" class=""><strong>Hayır, Müdahale Etmemelidir Diyenler</strong></h2><h3 id="1d154a69-1696-80b1-8466-c4ececb12cb0" class=""><strong>Gerekçeler:</strong></h3><p id="1d154a69-1696-8084-980d-cd8641a2001a" class="">•	<strong>Piyasa kendi kendini dengeler</strong> (klasik/liberal görüş).</p><p id="1d154a69-1696-8013-b0dc-e467a61ff7d6" class="">•	<strong>Devletin bilgi eksikliği vardır</strong> (Hayek).</p><p id="1d154a69-1696-80a4-a37c-c0a5a00882e8" class="">•	<strong>Siyasi çıkarlar kaynak israfına yol açar</strong>.</p><p id="1d154a69-1696-800b-9f04-d93b2f2f1131" class="">•	<strong>Devlet müdahalesi, bireysel özgürlükleri kısıtlayabilir.</strong></p><p id="1d154a69-1696-8033-905c-ca7568b28188" class="">
+</p><h3 id="1d154a69-1696-80eb-a409-d81f55963537" class=""><strong>Orta Yol Görüşü</strong></h3><p id="1d154a69-1696-8016-ab1c-f057bc5dac75" class="">•	<strong>Devlet sadece piyasa başarısızlığında müdahale etmeli</strong> (Refah Devleti görüşü).</p><p id="1d154a69-1696-80ac-b36a-fc1a47e5fefb" class="">•	Müdahale, <strong>etkinlik ve adalet</strong> arasında denge gözeterek yapılmalıdır.</p><p id="1d154a69-1696-808b-9a4a-c2b42e2e798f" class="">
+</p><hr id="1d154a69-1696-80b3-9c44-ce50339b5550"/><p id="1d154a69-1696-80d8-8536-c9713cc86224" class="">
+</p><h1 id="1d154a69-1696-8083-a3eb-fb8c3b6d7920" class=""><strong>PIGOU VERGİLENDİRME NEDİR?</strong></h1><p id="1d154a69-1696-8024-af80-d2e9d3e115af" class="">
+</p><h2 id="1d154a69-1696-80de-82c6-cf6e72b65eb6" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-805a-9eaa-d9126033ba74" class="">Arthur Cecil Pigou tarafından önerilen bu vergi modeli, <strong>olumsuz dışsallık yaratan faaliyetlerin</strong> piyasada neden olduğu toplumsal zararı azaltmak için <strong>maliyetin içselleştirilmesini</strong> amaçlar.</p><p id="1d154a69-1696-8044-9ec0-e08d9bad6a89" class="">
+</p><h2 id="1d154a69-1696-80ce-8d83-d28b9d187657" class=""><strong>Nasıl İşler?</strong></h2><p id="1d154a69-1696-80f1-8b95-ec028ba4b0ba" class="">•	Olumsuz dışsallık yaratan firmalara, yarattıkları zarara denk bir <strong>Pigou vergisi</strong> uygulanır.</p><p id="1d154a69-1696-80f3-863b-e774d37dbad9" class="">•	Bu vergi, üreticiyi sosyal açıdan optimal üretim düzeyine iter.</p><p id="1d154a69-1696-804e-ad1b-d45a012b7c9b" class="">
+</p><h3 id="1d154a69-1696-80e5-aa14-dad5ae2518dc" class=""><strong>Örnek</strong></h3><p id="1d154a69-1696-8034-8d94-dc3f76309927" class="">•	Karbon emisyon vergisi</p><p id="1d154a69-1696-8038-98de-f12eb0bd119d" class="">•	Sigara vergisi</p><p id="1d154a69-1696-8069-b650-f89f4541123f" class="">•	Plastik torba vergisi</p><p id="1d154a69-1696-80e5-a9b8-cb375c1c0faf" class="">
+</p><h3 id="1d154a69-1696-807f-aa34-f924ca25889f" class=""><strong>Faydaları</strong></h3><p id="1d154a69-1696-803f-bd73-e69dbc5e11ac" class="">•	Dışsallığı fiyatlama yoluyla düzenler.</p><p id="1d154a69-1696-80c3-840f-c01deafa9c7c" class="">•	Gelir sağlama yanında davranış yönlendirir.</p><p id="1d154a69-1696-8042-817f-f6da9564ff72" class="">•	Devletin doğrudan müdahalesi gerekmeden çözüm sağlar.</p><p id="1d154a69-1696-80cf-81ff-decaaddf4db9" class="">
+</p><hr id="1d154a69-1696-80d8-92ca-d85cda9e3501"/><p id="1d154a69-1696-8007-95f5-cc533d7d29aa" class="">
+</p><h1 id="1d154a69-1696-8072-b01f-dd1b8fccf2ae" class=""><strong>DOĞAL TEKEL NEDİR?</strong></h1><p id="1d154a69-1696-80dc-9d5d-c2ef375a527c" class="">
+</p><h2 id="1d154a69-1696-805c-a843-d6b3d9631e2d" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-806f-ad95-d396984022e3" class="">Doğal tekel, bir endüstride piyasa talebinin <strong>tek bir firma</strong> tarafından karşılanmasının, iki ya da daha fazla firma tarafından karşılanmasından <strong>daha düşük maliyetli</strong> olduğu durumdur.</p><p id="1d154a69-1696-8052-abff-dc439593cf75" class="">
+</p><h2 id="1d154a69-1696-8091-95ef-dca795767d20" class=""><strong>Temel Özelliği</strong></h2><p id="1d154a69-1696-8028-9283-c9088d818e71" class="">•	<strong>Artan ölçek ekonomileri</strong> nedeniyle maliyetler azalan eğilimdedir.</p><p id="1d154a69-1696-800b-91d0-e873615829a8" class="">•	Birden fazla firmanın piyasaya girmesi durumunda <strong>toplam maliyet artar</strong>, kaynak israfı oluşur.</p><p id="1d154a69-1696-8017-a576-c370594bb58b" class="">
+</p><h3 id="1d154a69-1696-8009-b14b-f7a982b14ab5" class=""><strong>Örnekler</strong></h3><p id="1d154a69-1696-807b-8ed4-d132a961807d" class="">•	Elektrik şebekesi</p><p id="1d154a69-1696-800c-ac81-c0f23790234e" class="">•	Su dağıtımı</p><p id="1d154a69-1696-801e-b288-fecdb4835273" class="">•	Doğalgaz altyapısı</p><p id="1d154a69-1696-802f-9893-e69e94f19403" class="">•	Demiryolları</p><p id="1d154a69-1696-80f0-aa18-f295351297cc" class="">
+</p><h3 id="1d154a69-1696-807f-8d2e-d01256c82db9" class=""><strong>Çözüm Yolları</strong></h3><p id="1d154a69-1696-8092-b489-dc490f08345d" class="">•	Devlet tekeli olarak işletme</p><p id="1d154a69-1696-803a-a030-eca105d92f76" class="">•	Özel sektörce işletilip kamu tarafından düzenlenme</p><p id="1d154a69-1696-80de-aff0-c3173d7388b3" class="">•	Fiyat denetimi, kalite kontrolü</p><p id="1d154a69-1696-8088-a841-fceda515422d" class="">
+</p><hr id="1d154a69-1696-80f2-8675-cbc35a543e7b"/><p id="1d154a69-1696-8075-b145-d8e2671e3e92" class="">
+</p><h1 id="1d154a69-1696-808f-98d0-e5c6b6588b3f" class=""><strong>TAYINLAMA VE SİNYAL NEDİR?</strong></h1><p id="1d154a69-1696-8068-9ef0-c9c4e182be66" class=""><em>Piyasa fiyat sisteminin sağladığı iki temel işlevdir.</em></p><p id="1d154a69-1696-80bc-b669-ff4e8945b333" class="">
+</p><h2 id="1d154a69-1696-80f0-af40-f7927ed15096" class=""><strong>Tayınlama (Rationing)</strong></h2><p id="1d154a69-1696-80cc-befd-c3d484b86377" class="">•	Fiyat sistemi, <strong>kıt malların kim tarafından tüketileceğini</strong> belirler.</p><p id="1d154a69-1696-808b-827a-c20f6fe50898" class="">•	Daha yüksek fiyat, sadece en fazla ödeme isteği olan bireylerin tüketmesini sağlar.</p><p id="1d154a69-1696-8028-ac17-d1572bf17529" class=""><strong>Örnek:</strong> Benzin fiyatı artınca sadece acil ihtiyacı olanlar alır.</p><p id="1d154a69-1696-809c-aec8-e58dcce906a8" class="">
+</p><h2 id="1d154a69-1696-801f-b6c0-eb647733b101" class=""><strong>Sinyal (Signaling)</strong></h2><p id="1d154a69-1696-8093-a6bc-f1ef2a5d7f7c" class="">•	Fiyatlar, hem tüketicilere hem üreticilere <strong>bilgi sağlar</strong>.</p><p id="1d154a69-1696-80bb-a1f3-d7b6d2d00ef7" class="">•	Artan fiyat: Talep fazla, üretim artırılmalı → üreticiye sinyal.</p><p id="1d154a69-1696-8079-8ba5-e230805bcf40" class="">•	Düşen fiyat: Talep az, üretim azaltılmalı → üreticiye sinyal.</p><p id="1d154a69-1696-80f2-85ba-f77ee3deaea6" class=""><strong>Örnek:</strong> Bir malın fiyatı yükseliyorsa üreticiler bu alana yönelir.</p><p id="1d154a69-1696-8008-a93a-dad7f5f74b85" class="">
+</p><hr id="1d154a69-1696-8045-9450-c0242ef6cee2"/><p id="1d154a69-1696-8055-8e23-dd7a6e859aa6" class="">
+</p><h1 id="1d154a69-1696-8058-92ec-d285288a5a86" class=""><strong>KAMUSAL FİYATLAMADA HANGİ FAKTÖRLER GÖZETİLİR?</strong></h1><p id="1d154a69-1696-80aa-804b-ccb39f4beac2" class="">
+</p><h2 id="1d154a69-1696-80ae-a594-f4cfccb994d9" class=""><strong>Kamusal Fiyatlama (Public Pricing)</strong></h2><p id="1d154a69-1696-80a4-a3a9-de2e1414d6fb" class="">Kamu tarafından sunulan mal ve hizmetlerde fiyat belirlenirken aşağıdaki kriterler dikkate alınır:</p><p id="1d154a69-1696-809d-ac6f-d7871035cb5c" class="">1.	<strong>Maliyet Esası</strong>: Fiyat, sunum maliyetini karşılamalıdır.</p><p id="1d154a69-1696-8067-995b-dfaaeb468817" class="">2.	<strong>Gelir Dağılımı Etkisi</strong>: Düşük gelir grupları için fiyatlar sübvanse edilebilir.</p><p id="1d154a69-1696-809c-8f34-fb795d819d68" class="">3.	<strong>Fayda İlkesi</strong>: Faydalanan kadar ödeme (kullanım bedeli).</p><p id="1d154a69-1696-8046-8c49-c845a0d3fb70" class="">4.	<strong>Marjinal Maliyet Fiyatlaması</strong>: Toplumsal etkinlik için ideal fiyattır.</p><p id="1d154a69-1696-80bc-add4-d99ebd44b7b9" class="">5.	<strong>Siyasi Amaçlar</strong>: Seçim politikaları, sosyal denge sağlama.</p><p id="1d154a69-1696-80ca-9d33-e53b07dbef70" class="">6.	<strong>Hizmetin Niteliği</strong>: Erdemli mal mı, zorunlu hizmet mi?</p><p id="1d154a69-1696-8055-8a3f-ea84988e71dd" class="">7.	<strong>Fiyat esnekliği</strong>: Talebin fiyat değişimine duyarlılığı.</p><p id="1d154a69-1696-807e-8728-e1390d19b353" class="">
+</p><hr id="1d154a69-1696-8015-a8da-fe8a3ee73fdd"/><p id="1d154a69-1696-802b-a887-c8f9cb7d4811" class="">
+</p><h1 id="1d154a69-1696-8007-a427-ea583a0d7a55" class=""><strong>TÜKETİMDE / ÜRETİMDE DIŞLAMA NEDİR?</strong></h1><p id="1d154a69-1696-80fb-8aa5-c2163c0474fb" class="">
+</p><h2 id="1d154a69-1696-80a0-b838-e7693bcce881" class=""><strong>Tüketimde Dışlama</strong></h2><p id="1d154a69-1696-80ee-bfe6-eaf390f51706" class="">Bir maldan yararlanmak isteyen kişinin, ödeme yapmadığı sürece o maldan <strong>dışlanabilmesidir</strong>.</p><p id="1d154a69-1696-8023-a69e-c07cd0cbed24" class="">•	<strong>Dışlanabilir mal</strong>: Örneğin sinema bileti → bilet almazsan içeri giremezsin.</p><p id="1d154a69-1696-80e5-85db-c5718453e550" class="">•	<strong>Dışlanamaz mal</strong>: Örneğin sokak lambası → kullanımdan dışlanamazsın.</p><p id="1d154a69-1696-80eb-a04b-d36041e67c96" class="">
+</p><h2 id="1d154a69-1696-8081-bf21-c5f66598af91" class=""><strong>Üretimde Dışlama</strong></h2><p id="1d154a69-1696-8018-bfe2-f7759e272b5b" class="">Bir malın üretiminin yalnızca belirli firmalar tarafından yapılması ve diğer firmaların <strong>erişiminin sınırlı olmasıdır</strong>.</p><p id="1d154a69-1696-80eb-92e9-c1c9904bb7c2" class="">•	<strong>Doğal tekellerde görülür.</strong></p><p id="1d154a69-1696-80e1-91d3-d90e703fbaa6" class="">•	Kaynaklara erişim, patentler, tekel hakları gibi durumlarla ortaya çıkar.</p><p id="1d154a69-1696-80b4-b5eb-d1bc27374c81" class="">
+</p><hr id="1d154a69-1696-80ee-bd64-ed6868e2626f"/><p id="1d154a69-1696-809c-afa7-f89d6ca75c07" class="">
+</p><p id="1d154a69-1696-8017-a836-ecf2338e869d" class="">
+</p><h1 id="1d154a69-1696-80ab-9d44-e3ed64faea81" class=""><strong>KAMU EKONOMİSİNDE MAL TÜRLERİ ve DEVLETİN ROLÜ</strong></h1><p id="1d154a69-1696-8035-8903-f77602adbe3c" class="">
+</p><h2 id="1d154a69-1696-8075-b1fb-f69dd7e0542d" class=""><strong>I. ÖZEL MALLAR</strong></h2><p id="1d154a69-1696-8060-8934-c7bcce07bf8c" class="">
+</p><h3 id="1d154a69-1696-8003-8087-e991aea4e732" class=""><strong>Tanımı</strong></h3><p id="1d154a69-1696-8035-a6e7-e00e8a3469cd" class="">Özel mallar, piyasada fiyatlanabilen ve bireysel tüketim ile sınırlı olan mallardır. Bu malların tüketimi <strong>rekabetçidir</strong> ve <strong>dışlanabilirlik</strong> mümkündür. Yani, bir bireyin tüketimi diğerinin tüketimini engeller ve maldan faydalanmak isteyenin ödeme yapması gerekir.</p><p id="1d154a69-1696-80e7-a515-e8b7dbecc8cd" class="">
+</p><h3 id="1d154a69-1696-8033-809c-e4dd29572835" class=""><strong>Özellikleri</strong></h3><p id="1d154a69-1696-8084-8ce8-cf939fc1c686" class="">•	<strong>Tüketimde rekabet vardır.</strong> (Rival)</p><p id="1d154a69-1696-8075-a248-c8237a9f9758" class="">•	<strong>Tüketimden dışlanma mümkündür.</strong> (Excludable)</p><p id="1d154a69-1696-80b6-ba33-fff001a9e605" class="">•	Serbest piyasa koşullarında sunulabilirler.</p><p id="1d154a69-1696-80cb-9106-c87830b02c42" class="">
+</p><h3 id="1d154a69-1696-806c-94d7-e21229eb191b" class=""><strong>Erdemli Mallar ve Kamu Tarafından Sunulan Özel Mallar</strong></h3><p id="1d154a69-1696-80d8-ad86-eb90e821dc20" class="">Erdemli mallar, bireylerin talep etmese bile toplumun yararına olduğuna inanılan, dolayısıyla <strong>devletin sübvanse ettiği veya doğrudan sunduğu</strong> mallardır.</p><p id="1d154a69-1696-801b-99f5-e8ea8d0fe095" class="">•	<strong>Örnek</strong>: Eğitim, sağlık hizmetleri</p><p id="1d154a69-1696-80c0-829c-e425da608d02" class="">Bu tür mallar piyasada özel mal gibi fiyatlanabilir olsalar da, kamusal etkileri nedeniyle devlet müdahalesiyle desteklenir.</p><p id="1d154a69-1696-8086-8216-c402d64662d2" class="">
+</p><h3 id="1d154a69-1696-8096-931e-eeaa4abbf27e" class=""><strong>Yarı Kamusal Mallar</strong></h3><p id="1d154a69-1696-8085-9af6-d20c39bab028" class="">Yarı kamusal mallar da bu gruba girer; bunlar özel malların özelliklerine sahip olmakla birlikte toplumsal etkileri yüksek olan mal ve hizmetlerdir.</p><p id="1d154a69-1696-80af-b96c-f1c1a6800dc4" class="">
+</p><hr id="1d154a69-1696-80d7-af29-d9601d75c0eb"/><p id="1d154a69-1696-80df-9f64-d15860419637" class="">
+</p><h2 id="1d154a69-1696-80b4-be76-f8407d575335" class=""><strong>II. ORTAK KULLANIM MALLARI (COMMON GOODS)</strong></h2><p id="1d154a69-1696-80f3-afb5-d4aa269ee07d" class="">
+</p><h3 id="1d154a69-1696-803d-9b03-fb2d17d6938f" class=""><strong>Tanımı</strong></h3><p id="1d154a69-1696-8059-8803-f62a4c5764d8" class="">Ortak kullanım malları, <strong>tüketimde rekabetin olduğu</strong> ancak <strong>tüketimden dışlanmanın mümkün olmadığı</strong> mal ve hizmetlerdir. Bu özelliklerinden dolayı <strong>serbest binen (free rider)</strong> problemiyle karşı karşıyadırlar.</p><p id="1d154a69-1696-8015-bd69-d6477ddfdaab" class="">
+</p><h3 id="1d154a69-1696-8040-90a2-d7276f68de9d" class=""><strong>Özellikleri</strong></h3><p id="1d154a69-1696-801e-839a-c058fb028527" class="">•	<strong>Tüketimde rekabet vardır.</strong></p><p id="1d154a69-1696-8048-9f5f-e5f61bd276a3" class="">•	<strong>Tüketimden dışlanma mümkün değildir.</strong></p><p id="1d154a69-1696-80b8-bca8-f8d97e22f976" class="">•	Aşırı kullanım riski taşırlar → <strong>Tükenebilirlik tehlikesi.</strong></p><p id="1d154a69-1696-809e-afae-f86ee1044002" class="">
+</p><h3 id="1d154a69-1696-802f-8c81-c6a51ebe2763" class=""><strong>Bedavacılık (Free Rider) Problemi</strong></h3><p id="1d154a69-1696-804d-b2ce-e0920e800be4" class="">Bir birey, bu tür mallardan fayda sağlarken herhangi bir ödeme yapmadan yararlanabilir. Bu durum, özel sektörün bu malları üretmekten kaçınmasına ve kaynakların aşırı kullanımıyla tükenmesine neden olur.</p><p id="1d154a69-1696-80fc-92b0-c8691b518b9e" class="">
+</p><h3 id="1d154a69-1696-802f-85bd-c17dc51af0d4" class=""><strong>Devletin Rolü</strong></h3><p id="1d154a69-1696-80c5-afff-fc0839a013da" class="">•	Devlet, bu malların kullanımını <strong>düzenlemeli</strong> ve <strong>denetlemelidir</strong>.</p><p id="1d154a69-1696-8057-9a90-c58331762e39" class="">•	<strong>Örnek</strong>: Denizler, ormanlar, yeraltı su kaynakları.</p><p id="1d154a69-1696-80bc-857a-df1c5d3438ea" class="">•	Balıkçılık gibi alanlarda, devlet düzenleme yapmazsa türlerin yok olması gibi sorunlar doğar.</p><p id="1d154a69-1696-801d-bbfc-c4c9aa8e1f6f" class="">
+</p><hr id="1d154a69-1696-802b-a7bd-c5633591b752"/><p id="1d154a69-1696-8098-9c11-f2d303166e54" class="">
+</p><h2 id="1d154a69-1696-809a-859f-dfda637cfdbf" class=""><strong>III. DIŞSALLIKLAR ve FİYATLANABİLİR MALLAR</strong></h2><p id="1d154a69-1696-807c-becb-e0d1ffb90964" class="">
+</p><h3 id="1d154a69-1696-8003-aec1-dbb16a6322de" class=""><strong>Dışsallık Tanımı</strong></h3><p id="1d154a69-1696-80b7-ac8f-f63440325f7f" class="">Dışsallık, bir ekonomik faaliyetin üçüncü kişileri etkilemesi ancak bu etkinin piyasa fiyatlarına yansımamasıdır.</p><p id="1d154a69-1696-804b-a127-cf234eae750f" class="">•	<strong>Olumlu Dışsallık</strong>: Aşı yaptırmak, eğitim almak</p><p id="1d154a69-1696-801c-9cba-c22059cd133a" class="">•	<strong>Olumsuz Dışsallık</strong>: Çevre kirliliği, fabrika atıkları</p><p id="1d154a69-1696-809d-81f6-f4628773e09c" class="">
+</p><h3 id="1d154a69-1696-8093-ba1d-ff497e367268" class=""><strong>Fiyatlanabilir Fakat Dışsallık Yaratan Mallar</strong></h3><p id="1d154a69-1696-80d9-beb9-d79359f43da4" class="">Bazı mallar piyasada fiyatlanabilir olsa da, sosyal etkileri nedeniyle devletin müdahalesi gerekebilir. Çünkü piyasa fiyatı, bu malların yarattığı <strong>toplumsal faydayı tam olarak yansıtmaz.</strong></p><p id="1d154a69-1696-8046-80de-c38575882ab3" class=""><strong>Örnek: Meteoroloji Hizmetleri</strong></p><p id="1d154a69-1696-8003-9112-e1ec0abb5590" class="">•	Bu hizmetten birçok kişi aynı anda faydalanabilir.</p><p id="1d154a69-1696-80e7-8793-e7d6dbbf77de" class="">•	Bir kişinin faydalanması diğerini etkilemez (rekabet yoktur).</p><p id="1d154a69-1696-80f9-96c1-d70ed10911f8" class="">•	Ancak hizmet dışlanabilir yapıda olabilir → Kulüp malına yakın.</p><p id="1d154a69-1696-80f8-9f88-e937e3c9fd0b" class="">
+</p><h3 id="1d154a69-1696-8043-9072-cd32c03d2dac" class=""><strong>Klüp Mallar ile İlişkisi</strong></h3><p id="1d154a69-1696-8014-9141-e946cd072631" class="">Belirli bir kapasiteye kadar tüketimden <strong>rekabetin olmadığı</strong>, fakat <strong>tüketimden dışlanmanın mümkün olduğu</strong> mallar → <strong>Klüp malları</strong> olarak tanımlanır. Örneğin ücretli otoyollar veya üyelik gerektiren online platformlar.</p><p id="1d154a69-1696-8082-ac50-d9cc29a896e6" class="">
+</p><hr id="1d154a69-1696-80be-9980-ed4308627bab"/><p id="1d154a69-1696-8005-8c04-c2ab7f71b1bf" class="">
+</p><h2 id="1d154a69-1696-80f6-9aad-ecd5a5a89171" class=""><strong>IV. TAM KAMUSAL MALLAR (PURE PUBLIC GOODS)</strong></h2><p id="1d154a69-1696-80fd-9c75-e60c4e277971" class="">
+</p><h3 id="1d154a69-1696-8018-b3c4-ca1035f8e1f3" class=""><strong>Tanımı</strong></h3><p id="1d154a69-1696-80e1-93b7-db9292ad71be" class="">Tam kamusal mallar, <strong>tüketimde rekabetin olmadığı</strong> ve <strong>tüketimden dışlanmanın da mümkün olmadığı</strong> mallardır. Bu mallar özel sektör tarafından <strong>sunulamaz</strong> çünkü ödeme yapmayanlar bile maldan yararlanabilir (bedavacılık problemi), ayrıca bireylerin tüketimi birbirini <strong>etkilemez</strong>, yani ortak tüketim mümkündür.</p><p id="1d154a69-1696-8068-8e0d-e00befaf9ecc" class="">
+</p><h3 id="1d154a69-1696-80b0-babc-c746a6865e08" class=""><strong>Özellikleri</strong></h3><p id="1d154a69-1696-8026-91c1-e5993423f580" class="">1.	<strong>Tüketimde Rekabetsizlik (Non-rival)</strong></p><p id="1d154a69-1696-8025-8672-e61e13a94a11" class="">•	Bir bireyin malı tüketmesi, diğer bireylerin tüketimini azaltmaz.</p><p id="1d154a69-1696-8009-befb-fe3ae1fa163b" class="">•	Topluca tüketim yapılabilir.</p><p id="1d154a69-1696-80e7-b86c-dcdf2c7d462a" class="">2.	<strong>Dışlanamazlık (Non-excludable)</strong></p><p id="1d154a69-1696-808f-808d-e2f9c38dbe68" class="">•	Kimse bu mallardan faydalanmaktan mahrum bırakılamaz.</p><p id="1d154a69-1696-806e-bb6f-fa8ae34664ef" class="">
+</p><h3 id="1d154a69-1696-8033-96a2-e80592c9bb53" class=""><strong>Sonuç:</strong></h3><p id="1d154a69-1696-80ef-8e5e-c914e676873e" class="">Bu özellikleri nedeniyle bu mallar <strong>piyasada fiyatlanamaz</strong>, dolayısıyla <strong>yalnızca kamu kesimi tarafından sağlanabilir.</strong></p><p id="1d154a69-1696-8054-b9e5-ca3d8fdda0fa" class=""><strong>Örnekler</strong></p><p id="1d154a69-1696-80ee-8f4b-fd2e1ae68c02" class="">•	<strong>Ulusal savunma</strong>: Her vatandaş aynı anda korunur, kimse dışlanamaz.</p><p id="1d154a69-1696-8096-9052-efce0cdbd13a" class="">•	<strong>Adalet hizmeti</strong>: Mahkemeler, hukukun üstünlüğü herkes için geçerlidir.</p><p id="1d154a69-1696-800d-b075-c5a4047db295" class="">•	<strong>Sokak aydınlatması</strong>: Kullanımı bireyler arasında rekabete açık değildir.</p><p id="1d154a69-1696-80f9-a183-c2490845cd7a" class="">
+</p><h3 id="1d154a69-1696-8054-b50e-c33c73e0d7bd" class=""><strong>Üretim ve Arz Koşulları</strong></h3><p id="1d154a69-1696-80b6-b02d-df3904052d63" class="">•	Özel sektör için kâr getirici olmayan bu mallar, <strong>vergi gelirleriyle finanse edilir</strong>.</p><p id="1d154a69-1696-80c4-a582-f18f63cf510b" class="">•	Toplumsal refah ve kamu düzeni gibi üst amaçlar doğrultusunda devlet tarafından üretilir veya desteklenir.</p><p id="1d154a69-1696-802f-bc03-d6b233aff6ac" class="">
+</p><hr id="1d154a69-1696-8096-af34-d1f21d4d505e"/><p id="1d154a69-1696-8052-b0ff-fb79e8261199" class="">
+</p><h1 id="1d154a69-1696-8055-b385-ce521bc3acdb" class=""><strong>VERGİ FİYATI (TAX PRICE) Nedir? </strong></h1><p id="1d154a69-1696-8065-bbdc-e5d8ee015436" class="">
+</p><h2 id="1d154a69-1696-80a6-bea4-e0d1cd56795e" class=""><strong>Tanımı</strong></h2><p id="1d154a69-1696-8072-993c-eb87f235027c" class="">Vergi fiyatı, bireylerin bir kamu malından tükettikleri her <strong>ek birim hizmet</strong> için <strong>ne kadar ek vergi ödemesi gerektiğini</strong> gösteren kavramdır.</p><h2 id="1d154a69-1696-8026-be5d-f948645fe64c" class=""><strong>Amaç</strong></h2><p id="1d154a69-1696-8027-9385-c91fb11aec36" class="">Bu kavram, kamu malı tüketiminin bireysel maliyetini belirleyerek, <strong>bireylerin kamu harcamalarına katkı düzeylerini</strong> daha adil şekilde hesaplamaya yardımcı olur.</p><p id="1d154a69-1696-805f-a7cc-e58d71c2b6f6" class="">
+</p><h2 id="1d154a69-1696-8098-894c-d8cf0285cc7f" class=""><strong>Özellikleri</strong></h2><p id="1d154a69-1696-8004-b4f8-dc5249f916e5" class="">•	Vergi fiyatı, kamu mallarının arzında <strong>talep yönlü analizler yapılmasına</strong> olanak sağlar.</p><p id="1d154a69-1696-80f8-98eb-cb55be1c045c" class="">•	Bireylerin kamu mallarına olan <strong>marjinal faydaları</strong> vergilendirme sistemiyle eşleştirilerek <strong>etkinlik</strong> sağlanabilir.</p><p id="1d154a69-1696-8010-a45e-cdfd69dd956c" class="">
+</p><h2 id="1d154a69-1696-80ea-bd08-dce4a9c5ae1c" class=""><strong>Teorik Arka Plan</strong></h2><p id="1d154a69-1696-8066-955d-cf1c21bf4219" class="">•	Samuelson’un kamu mallarının optimal arz teorisi ile ilişkilidir:</p><blockquote id="1d154a69-1696-80ee-8af0-d245641415b9" class="">Bireylerin toplam marjinal ödeme istekleri (vergi fiyatları), kamu malının marjinal maliyetine eşit olmalıdır.</blockquote><p id="1d154a69-1696-8009-9c41-f4382ac7b820" class="">
+</p><h2 id="1d154a69-1696-8095-b16b-c0afa826d86c" class=""><strong>Zorluklar</strong></h2><p id="1d154a69-1696-80d0-9589-f286a965447e" class="">•	Gerçek hayatta bireylerin kamu mallarına ne kadar değer biçtiğini <strong>doğru tahmin etmek zordur.</strong></p><p id="1d154a69-1696-8080-bcb7-c91d5e064299" class="">•	Vergi fiyatı, kamu tercihlerinin açıklanması problemine bağlıdır (bireyler serbest binen olabilir).</p><hr id="1d154a69-1696-8086-bdc3-e369a7955fae"/><p id="1d154a69-1696-8026-a7e9-f70f1a3f048e" class="">
+</p><h2 id="1d154a69-1696-8034-ab89-c61dcb5e7fd1" class=""><strong>Tablo: Mal Türlerinin Karşılaştırması</strong></h2><p id="1d154a69-1696-8092-a218-ceecf6db5930" class="">
+</p><table id="1d154a69-1696-80a9-a4a3-cd11d4d8b4f2" class="simple-table"><tbody><tr id="1d154a69-1696-803f-b598-cf6e7540495c"><td id="kyZ]" class=""><strong>Mal Türü</strong></td><td id="oia=" class=""><strong>Tüketimde Rekabet</strong></td><td id="&gt;OCa" class=""><strong>Tüketimden Dışlanma</strong></td><td id="q@uz" class=""><strong>Örnek</strong></td></tr><tr id="1d154a69-1696-804c-9bbe-eff40d705fdb"><td id="kyZ]" class=""><strong>Özel Mallar</strong></td><td id="oia=" class="">Var</td><td id="&gt;OCa" class="">Mümkün</td><td id="q@uz" class="">Elma, telefon</td></tr><tr id="1d154a69-1696-8000-a3e8-c2e28630f51e"><td id="kyZ]" class=""><strong>Yarı Kamusal</strong></td><td id="oia=" class="">Var/Kısıtlı</td><td id="&gt;OCa" class="">Mümkün</td><td id="q@uz" class="">Sağlık, eğitim (devlet destekli özel mallar)</td></tr><tr id="1d154a69-1696-8025-b9ea-d162cc8397c8"><td id="kyZ]" class=""><strong>Klüp Malları</strong></td><td id="oia=" class="">Kısıtlı</td><td id="&gt;OCa" class="">Mümkün</td><td id="q@uz" class="">Ücretli otoyol, Netflix</td></tr><tr id="1d154a69-1696-8060-8ef1-ce83679bc093"><td id="kyZ]" class=""><strong>Ortak Kullanım</strong></td><td id="oia=" class="">Var</td><td id="&gt;OCa" class="">Mümkün değil</td><td id="q@uz" class="">Orman, deniz</td></tr><tr id="1d154a69-1696-806b-9516-e07e463450dd"><td id="kyZ]" class=""><strong>Tam Kamusal</strong></td><td id="oia=" class="">Yok</td><td id="&gt;OCa" class="">Mümkün değil</td><td id="q@uz" class="">Savunma, adalet, sokak lambası</td></tr></tbody></table><p id="1d154a69-1696-80e6-8750-e81dfd70e07d" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
