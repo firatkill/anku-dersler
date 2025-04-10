@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoşgeldiniz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 2rem;
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .box p {
+            color: #666;
+        }
+
+        .link-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #0070f3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .link-btn:hover {
+            background-color: #0051c3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hoşgeldiniz</h1>
+
+    <div class="container">
+        <div class="box">
+            <h2>Kamu Ekonomisi</h2>
+            <p>Notlara göz atmak için aşağıya tıklayınız.</p>
+            <a class="link-btn" href="/kamu-ekonomisi.html">Git</a>
+        </div>
+
+        <div class="box">
+            <h2>Yakında..</h2>
+            <p>Diğer notlar yakında eklenecektir. Takipte kalın!</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
